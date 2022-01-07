@@ -7,6 +7,10 @@ public class Customer extends Users {
 	public Consumption_Units u1=new Consumption_Units();
 	public String custArea;
 	public PayAccount p1;
+	public Customer(){
+		System.out.println("Customer class executed");
+
+	}
 	public Customer(String custScNo, Address custAdd, Consumption_Units u1, String custArea, PayAccount p1) {
 		super();
 		this.custScNo = custScNo;
@@ -35,6 +39,9 @@ public class Customer extends Users {
 		return null;
 	}
 	
-	
+	public void yay() {
+		System.out.println("Customer  function");
+		
+	}
 
 }

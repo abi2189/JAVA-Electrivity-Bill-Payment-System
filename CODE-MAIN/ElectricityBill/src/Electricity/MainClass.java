@@ -3,7 +3,8 @@ package Electricity;
 public class MainClass {
 
 	public static void main(String[] args) {
-		
+		Customer c= new Customer();
+		c.yay();
 
 	}
 
