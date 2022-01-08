@@ -1,22 +1,17 @@
-package Electricity;
-
 public class otherCharges {
 
-	
-	public static double fixedCharges;
+    public static double fixedCharges;
 	public static int GST;
 	public int duty;
 	public double totalOtherCharges;
-	
-	//constrcutor
-	public otherCharges(int duty, double totalOtherCharges) {
+
+    public otherCharges(int duty, double totalOtherCharges) {
 		super();
 		this.duty = duty;
 		this.totalOtherCharges = totalOtherCharges;
 	}
-	
-	//getter and setter
-	public static double getFixedCharges() {
+
+    public static double getFixedCharges() {
 		return fixedCharges;
 	}
 	public static void setFixedCharges(double fixedCharges) {
@@ -40,7 +35,5 @@ public class otherCharges {
 	public void setTotalOtherCharges(double totalOtherCharges) {
 		this.totalOtherCharges = totalOtherCharges;
 	}
-	
-	//getter and setter
-	
+    
 }

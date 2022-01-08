@@ -1,15 +1,12 @@
-package Electricity;
-
-public class Tariff_Slab {
-
-	public Consumption_Units c1;
+public class TariffSlab {
+    public ConsumptionUnits c1;
 	public String category;
 	public double tariffCharges;
 	
 	
 	//constructor 
 	
-	public Tariff_Slab(Consumption_Units c1, String category, double tariffCharges) {
+	public TariffSlab(ConsumptionUnits c1, String category, double tariffCharges) {
 		super();
 		this.c1 = c1;
 		this.category = category;
@@ -17,10 +14,10 @@ public class Tariff_Slab {
 	}
 	//getter and setter
 	
-	public Consumption_Units getC1() {
+	public ConsumptionUnits getC1() {
 		return c1;
 	}
-	public void setC1(Consumption_Units c1) {
+	public void setC1(ConsumptionUnits c1) {
 		this.c1 = c1;
 	}
 	public String getCategory() {
@@ -36,7 +33,5 @@ public class Tariff_Slab {
 		this.tariffCharges = tariffCharges;
 	}
 	
-	
-	//getter and setter
 	
 }
