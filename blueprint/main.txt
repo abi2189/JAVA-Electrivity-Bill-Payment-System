@@ -1,0 +1,68 @@
+MIND MAP
+
+    user{address COMPOSITION}
+admin customer{AGGREGATION service_no, COMPOSITION payAccount, COMPOSITION feedback}
+change_email interface {for user and admin}
+
+service_no{COMPOSITION address}{new bill[]}
+(ex: house and office)
+
+bill {COMPOSITION tariff,COMPOSITION otherCharges}{extends payment(use get bill_amt, call/pass values into payment method)}
+(bill contains consumption_units and bill_amt)
+
+payment (id, time, date, method)
+(contains bunck of print statements and stores/not saved values in variables)
+if the user opts to auto renew
+these values are passed through a constructor to create a 
+payAccount object
+
+feedback
+
+extra MIND MAP
+
+        , (tariff, otherCharges)(payAccount)
+       , (consumption,payment)
+address, bill, feedback, user
+cust
+
+bills MIND MAP
+
+customer
+id[]
+new service_no()
+
+service_no
+new bills[] 
+
+c[123].getMethod 
+
+
+
+pre -> each user id has multiple bill id 
+prob -> how do we link the bill ids to user ids 
+
+
+==========================
+composition ==> cannot
+A
+
+B
+ref A 
+method{
+    this.var = new A
+}
+
+MAIN
+new B
+==========================
+aggregation ==> can be independant
+A 
+
+B
+ref A
+method{
+    this.var = A
+}
+MAIN
+new A
+new B = pass by ref-->A
