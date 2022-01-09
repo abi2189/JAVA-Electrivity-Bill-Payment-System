@@ -18,6 +18,8 @@ public class PayAccount {
         this.postalCode=postalCode;
         this.expiryDate=expiryDate;
     }
+
+
     //getter-setter
     public void setAccountNo(long accountNo){
         this.accountNo=accountNo;
@@ -43,6 +45,8 @@ public class PayAccount {
     public String getDate(){
         return ft.format(expiryDate);
     }
+
+    
     //tostring
     public String toString(){
         return String.format("Account Number: %o\nCard-Holder Name: %s\nPostal Code: %o\nEpiry Date: %s", accountNo,cardholderName,postalCode,ft.format(expiryDate));

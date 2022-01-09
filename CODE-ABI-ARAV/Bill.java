@@ -19,7 +19,10 @@ public class Bill extends Payment{
     private Date dueDate = new Date();
     private Date disconDate = new Date();
 
-    private Bill(billNo, consUnits){//add issure date as well
+    public Bill(){
+
+    }
+    public Bill(int billNo,int  consUnits){//add issure date as well
         this.billNo = billNo;
         this.consUnits = consUnits;
         EC.
