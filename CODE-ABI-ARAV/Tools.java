@@ -151,6 +151,7 @@ public class Tools {
         int newCustomerIndex = this.linearSearchIndex(this.createUserID());
         objCustomer[0] = new Customer(202208L, "Abirami", "cust123", 19, "abi@gmail.com", 1111111111L);
         objCustomer[1] = new Customer(230308L, "Aravind", "cust123", 19, "arav@gmail.com", 2222222222L);
+        objCustomer[2] = new Customer(247082L, "Maddy", "cust123", 19, "maddy@gmail.com", 3333333333L);
         //add 1 more predefined, 3 more auto(check driver) for admin to view
         this.setUserIDInitialIndex(2);
     }
