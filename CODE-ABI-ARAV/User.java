@@ -1,20 +1,28 @@
+interface UserDetailsUpdate{
+    public abstract void changeEmail(String userEmail);
+}
+
+
 public class User {
     protected long userID;
     protected String userName;
     protected String userPass;
     protected int userAge;
     protected String userEmail;
-	protected String userPhn;
+	protected long userPhn;
 
     public User(){
         
     }
-    public User(long userID, String userName, String userPass, int userAge, String userEmail, String userPhn, Address addressObj){
+    public User(long userID, String userName, String userPass, int userAge, String userEmail, long userPhn){
         this.userID=userID;
         this.userName=userName;
         this.userPass=userPass; 
         this.userAge=userAge; 
         this.userEmail=userEmail; 
         this.userPhn=userPhn; 
+    }
+    public String toString(){
+        return String.format("User ID: %o\nUser Name: %s\nUser Age: %0\nUser Email: %s\nUser Phn: %o", userID,userName,userAge,userEmail,userPhn);
     }
 }
