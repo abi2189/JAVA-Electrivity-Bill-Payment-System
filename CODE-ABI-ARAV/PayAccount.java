@@ -5,14 +5,16 @@ public class PayAccount {
     private  long accountNo;
     private String cardholderName;
     private int postalCode;
-    private Date expiryDate= new Date();
+    private String expiryDate;
+    private Date date1;
 
-    SimpleDateFormat ft = 
-      new SimpleDateFormat ("yyyy.MM.dd");
+    SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");  
+
+
     //constructor
     public PayAccount(){
     }
-    public PayAccount(long accountNo, String cardholderName, int postalCode, Date expiryDate){
+    public PayAccount(long accountNo, String cardholderName, int postalCode, String expiryDate){
         this.accountNo=accountNo;
         this.cardholderName=cardholderName;
         this.postalCode=postalCode;
@@ -30,9 +32,6 @@ public class PayAccount {
     public void setPostalCode(int postalCode){
         this.postalCode=postalCode;
     }
-    public void setDate(Date expiryDate){
-        this.expiryDate=expiryDate;
-    }
     public long getAccountNo(){
         return this.accountNo;
     }
@@ -42,13 +41,19 @@ public class PayAccount {
     public int getPostalCode(){
         return this.postalCode;
     }
-    public String getDate(){
-        return ft.format(expiryDate);
+
+    public void setDate(String expiryDate) throws Exception{
+        this.expiryDate = expiryDate;
+        // Date date1=formatter1.parse(expiryDate); 
     }
+    public Date getDate() throws Exception{
+        return formatter1.parse(expiryDate);
+    }
+
 
     
     //tostring
-    public String toString(){
-        return String.format("Account Number: %o\nCard-Holder Name: %s\nPostal Code: %o\nEpiry Date: %s", accountNo,cardholderName,postalCode,ft.format(expiryDate));
-    }
+    // public String toString(){
+    //     return String.format("Account Number: %o\nCard-Holder Name: %s\nPostal Code: %o\nEpiry Date: %s", accountNo,cardholderName,postalCode,ft.format(expiryDate));
+    // }
 }

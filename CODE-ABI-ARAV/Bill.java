@@ -6,8 +6,10 @@ import java.util.*;
 import java.text.*;
 
 public class Bill extends Payment{
-    private otherCharges OC;
-    private energyCharges EC;
+    private otherCharges objOC;
+    private energyCharges objEC;
+
+    private float tEnergyCharges, tOtherCharges;
 
     private float billAmt;
 
@@ -19,21 +21,23 @@ public class Bill extends Payment{
     private Date dueDate = new Date();
     private Date disconDate = new Date();
 
-    public Bill(){
+    public Bill(){}
 
-    }
     public Bill(int billNo,int  consUnits){//add issure date as well
         this.billNo = billNo;
         this.consUnits = consUnits;
-        EC.
-        OC.calculateTotalOtherCharges(consUnits, );
-    }
 
-    // public long createBillNo(){
+        objEC = new energyCharges();
+        objEC.setConsUnits(this.consUnits);
+        this.tEnergyCharges = objEC.calculateEnergyCharges();
+        System.out.println(objEC);//prints everything abt energy charges
+
+        objOC = new otherCharges();
+        this.tOtherCharges = objOC.calculateTotalOtherCharges(this.consUnits, this.tEnergyCharges);
+        System.out.println(objOC);
         
-    // }
-    public void setBillAmt(float amt){
-        this.billAmt = amt;
+        this.billAmt = this.tEnergyCharges + this.tOtherCharges;
+        System.out.println("\nBill Amount: " + this.billAmt);
     }
 
     public float getBillAmt(){
