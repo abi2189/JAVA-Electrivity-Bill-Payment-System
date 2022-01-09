@@ -2,7 +2,7 @@ public class Customer extends User{
     
     public String custScNo;
 	public Address custAdd = new Address();
-	public ConsumptionUnits u1=new ConsumptionUnits();
+
 	public String custArea;
 	public PayAccount p1;
 

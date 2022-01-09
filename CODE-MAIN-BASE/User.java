@@ -1,24 +1,24 @@
 // -------------------------INTERFACE---------------------------
-interface UserLogin {
+// interface UserLogin {
 
-    String EBoard="Tamil Nadu Electricity Board";
-	String yearofImplementation="1st July 1957";
+//     String EBoard="Tamil Nadu Electricity Board";
+// 	String yearofImplementation="1st July 1957";
     
-    public abstract void changePassword(String Password);
-    public abstract void changeUsername(String UserName);
+//     public abstract void changePassword(String Password);
+//     public abstract void changeUsername(String UserName);
     
-}
+// }
 
 // -------------------------CLASS--------------------------------
 public abstract class User implements UserLogin{
 
-// --------------------DATA MEMBERS-------------------
-    private String userId;
-	private String userName;
-	private String userPass;
-	private int userAge;
-	private String userEmail;
-	private String userPhn;
+// // --------------------DATA MEMBERS-------------------
+//     private String userId;
+// 	private String userName;
+// 	private String userPass;
+// 	private int userAge;
+// 	private String userEmail;
+// 	private String userPhn;
 
 // --------------------ABSTRACT METHODS-------------------
     public abstract void changePassword(String Password);

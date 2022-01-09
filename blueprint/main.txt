@@ -1,6 +1,6 @@
 MIND MAP
 
-    user{address COMPOSITION}
+    user{address aggregation}
 admin customer{AGGREGATION service_no, COMPOSITION payAccount, COMPOSITION feedback}
 change_email interface {for user and admin}
 
