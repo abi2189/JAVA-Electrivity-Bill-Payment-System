@@ -10,7 +10,7 @@ public class Driver {
         Customer[] objCustomer;
         objCustomer = new Customer[100];
 
-        Admin[ ] objAdmin;
+        Admin[] objAdmin;
         objAdmin = new Admin[3];
 
         String printLine="--------------------------------------------------------------";
