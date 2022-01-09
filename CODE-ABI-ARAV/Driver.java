@@ -8,7 +8,10 @@ public class Driver {
         int intChoice;
         char charChoice;
         Customer[] objCustomer;
+        //Allocating memory not initiallizing
         objCustomer = new Customer[100];
+        Tools objTools = new Tools();
+        objTools.preCustomer(objCustomer);
 
         Admin[] objAdmin;
         objAdmin = new Admin[3];
@@ -31,11 +34,12 @@ public class Driver {
         
                         switch(intChoice) {
                             case 1:{
-                                //userid has to be printed 
+                                int newCustomerIndex = objTools.linearSearchIndex(objTools.createUserID());
+                                System.out.println("Your Auto-Generated Customer ID: " + objTools.indexStoredUserID[newCustomerIndex]);
 
-                                System.out.println(printLine+"\nEnter User Name:");
+                                System.out.print(printLine+"\nEnter User Name: ");
                                 String custUsername=scan.next();
-                                System.out.println("Set Password:");
+                                System.out.print("Set Password: ");
                                 String custPass=scan.next();
                                 System.out.println("Enter User Age:");
                                 int custUserAge=scan.nextInt();
@@ -59,11 +63,18 @@ public class Driver {
                                     }
                                 }while(str.length()!=10);  
 
+                                objCustomer[newCustomerIndex] = new Customer(objTools.indexStoredUserID[newCustomerIndex], custUsername, custPass, custUserAge, custEmail, custPhn);
+
+                                objCustomer[newCustomerIndex].viewCustomerDetails();
+
 
                             }
                                 
                                 break;
                             case 2:
+                                System.out.println("ha");
+                                objCustomer[0].viewCustomerDetails();
+                
                                 
                                 break;
                             default:

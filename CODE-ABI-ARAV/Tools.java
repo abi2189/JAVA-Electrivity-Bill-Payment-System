@@ -16,6 +16,11 @@ public class Tools {
     private int f = 0;//feedback no
     private int t = 0;//transaction no
 
+    //SET INITIALIZE JUST IN CASE
+    public void setUserIDInitialIndex(int u){
+        this.u = u;
+    }
+
     // CREATE NUMBERS
     public long createFeedbackNo(){
         this.indexStoredFeedbackNo[this.f] = randNum.nextLong(8999L)+1000L;//4-digits
@@ -139,5 +144,14 @@ public class Tools {
             }
         }//never leaves loop, always returns function
         return 999;
+    }
+
+    // PREDEFINED CUSTOMER DETAILS
+    public void preCustomer(Customer[] objCustomer){
+        int newCustomerIndex = this.linearSearchIndex(this.createUserID());
+        objCustomer[0] = new Customer(202208L, "Abirami", "cust123", 19, "abi@gmail.com", 1111111111L);
+        objCustomer[1] = new Customer(230308L, "Aravind", "cust123", 19, "arav@gmail.com", 2222222222L);
+        //add 1 more predefined, 3 more auto(check driver) for admin to view
+        this.setUserIDInitialIndex(2);
     }
 };

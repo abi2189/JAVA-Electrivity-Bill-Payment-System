@@ -6,15 +6,19 @@ public class Customer extends User implements UserDetailsUpdate{
     private payAccount objPayAccount;
     private Feedback objFeedback;
 
+    // public Tools objTools1;
+
 
     //CONSTRUCTORS
     public Customer(){
+        
     }
     public Customer(long userID, String userName, String userPass, int userAge, String userEmail, long userPhn){
-        super(userID, userName, userPass, userAge, userEmail, userPhn);
+        super(userID, userName, userPass, userAge, userEmail, userPhn);//parent class constructor
+        // this.objTools1 = objTools1;
     }
     public void viewCustomerDetails(){
-        System.out.println(objFeedback);
+        System.out.println(super.toString());
     }
 
     //FEEDBACK AND PAYMENT SET AND VIEW DETAILS 

@@ -33,7 +33,7 @@ public class test {
         // pay.setDate("2022.01.23");
         // System.out.println(pay.getDate());
 
-        // Tools obj = new Tools();
+        Tools obj = new Tools();
         // System.out.println(Tools.createBillNo());
         
         // System.out.println(obj.createFeedbackNo());
@@ -53,7 +53,7 @@ public class test {
         // System.out.println(obj.createTransactionNo());
         // System.out.println(obj.createTransactionNo());
 
-        // System.out.println(obj.createUserID());
+        // System.out.println(obj.linearSearchIndex(obj.createUserID()));
         // System.out.println(obj.createUserID());
         // System.out.println(obj.createUserID());
         // System.out.println(obj.createUserID());

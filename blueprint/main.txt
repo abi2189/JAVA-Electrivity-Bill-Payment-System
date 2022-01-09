@@ -66,3 +66,14 @@ method{
 MAIN
 new A
 new B = pass by ref-->A
+
+
+
+LOGIN FORMAT
+
+1. inputs userid passw -> checks valid
+2. his service no. are displayed(even if its just one) -> choose particular no. fromm the screen
+3. --> payable bills(due bills, overdue bills with fine), previous bills
+
+customer class --> new [] service no.address 
+service class --> new [] bills 
