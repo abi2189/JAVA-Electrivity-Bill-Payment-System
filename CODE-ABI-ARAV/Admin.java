@@ -8,4 +8,8 @@ public class Admin extends User {
         super(userID, userName, userPass, userAge, userEmail, userPhn);
     }
     
+    public String toString(){
+        return super.toString();
+    }
+    
 }

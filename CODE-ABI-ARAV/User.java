@@ -23,6 +23,6 @@ public class User {
         this.userPhn=userPhn; 
     }
     public String toString(){
-        return String.format("User ID: %o\nUser Name: %s\nUser Age: %0\nUser Email: %s\nUser Phn: %o", userID,userName,userAge,userEmail,userPhn);
+        return "User ID: "+userID+"\nUser Name: "+userName+"\nUser Age: "+userAge+"\nUser Email: "+userEmail+"\nUser Phn: "+userPhn;
     }
 }
