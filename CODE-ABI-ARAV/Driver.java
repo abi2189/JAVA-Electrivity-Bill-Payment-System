@@ -219,48 +219,6 @@ public class Driver {
 
 
 
-
-
-
-
-
-
-        // System.out.println(printLine+"\n\t\t\tADMIN/CUSTOMER");
-        // System.out.println("\t\tEnter 1.CUSTOMER 2.ADMIN\n"+printLine);
-
-        // userintChoice = scan.nextInt();
-
-
-        // switch(userintChoice) {
-        //     case 1:
-        //         System.out.println(printLine+"\n\t\t\tCUSTOMER");
-        //         System.out.println("\t\tEnter 1.REGISTER 2.LOGIN\n"+printLine);
-
-        //         logintChoice = scan.nextInt();
-
-        //         switch(logintChoice) {
-        //             case 1:
-                        
-        //                 break;
-        //             case 2:
-        //                 // code block
-        //                 break;
-        //             default:
-        //                 // code block
-        //           }
-
-        //         break;
-        //     case 2:
-        //       // code block
-        //         break;
-        //     default:
-        //       // code block
-        //   } 
-
-
-
-
-
     scan.close();
     }
     

@@ -21,7 +21,7 @@ public class Customer extends User implements UserDetailsUpdate{
     public void setFeedbackDetails(String feedbackDesc,Date feedbackDate){
         objFeedback= new Feedback(feedbackDesc,feedbackDate);
     }
-    public void setPayAccountDetails(long accountNo, String cardholderName, int postalCode, Date expiryDate){
+    public void setPayAccountDetails(long accountNo, String cardholderName, int postalCode, String expiryDate){
         objPayAccount = new payAccount(accountNo, cardholderName, postalCode, expiryDate);
     }
 

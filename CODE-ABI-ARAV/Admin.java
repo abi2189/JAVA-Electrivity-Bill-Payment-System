@@ -1,7 +1,5 @@
 public class Admin extends User implements UserDetailsUpdate{
     
-    
-    
     public Admin(){
     }
     public Admin(long userID, String userName, String userPass, int userAge, String userEmail, long userPhn){
