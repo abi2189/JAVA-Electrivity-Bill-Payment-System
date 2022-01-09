@@ -3,7 +3,7 @@ import java.text.*;
 
 public class Customer extends User implements UserDetailsUpdate{
 
-    private PayAccount objPayAccount;
+    private payAccount objPayAccount;
     private Feedback objFeedback;
 
 
@@ -22,7 +22,7 @@ public class Customer extends User implements UserDetailsUpdate{
         objFeedback= new Feedback(feedbackDesc,feedbackDate);
     }
     public void setPayAccountDetails(long accountNo, String cardholderName, int postalCode, Date expiryDate){
-        objPayAccount = new PayAccount(accountNo, cardholderName, postalCode, expiryDate);
+        objPayAccount = new payAccount(accountNo, cardholderName, postalCode, expiryDate);
     }
 
     public void viewFeedbackDetails(){
@@ -41,7 +41,7 @@ public class Customer extends User implements UserDetailsUpdate{
         super.userAge=userAge;
         System.out.println("User Age UPDATED!");
     }
-    public void changeUserPhn(String userPhn){
+    public void changeUserPhn(long userPhn){
         super.userPhn=userPhn;
         System.out.println("User Phone Number UPDATED!");
     }
