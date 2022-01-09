@@ -61,11 +61,54 @@ public class Driver {
                                         
                                         System.out.println("Invalid Phone Number!");
                                     }
-                                }while(str.length()!=10);  
+                                }while(str.length()!=10);
+
+                                String houseNo;
+                                String streetName;
+                                String city;
+                                String district;
+                                int pinCode;
+
+                                Address objAddress;
+                                serviceNo objServiceNo;
+                                int newServiceNoIndex;
+
+                                do{
+
+                                    System.out.println("Enter Address Details of the building/office for which your paying electricity");
+                                    System.out.print("\nEnter house No.: ");
+                                    houseNo = scan.next();
+                                    System.out.print("\nEnter street name: ");
+                                    streetName = scan.next();
+                                    System.out.print("\nEnter city: ");
+                                    city = scan.next();
+                                    System.out.print("\nEnter district: ");
+                                    district = scan.next();
+                                    System.out.print("\nEnter pincode: ");
+                                    pinCode = scan.nextInt();
+
+                                    objAddress = new Address(houseNo, streetName, city, district, pinCode);
+
+                                    newServiceNoIndex = objTools.linearSearchIndex(objTools.createServiceNo());
+                                    System.out.println("Your Auto-Generated Service No. for this address: " + objTools.indexStoredServiceNo[newServiceNoIndex]);
+
+                                    objServiceNo = new serviceNo(newServiceNoIndex,objAddress);
+
+                                    
+
+
+
+
+                                    System.out.print("Do you want to add address of another building that you own?(y/n)");
+                                    str = scan.next();
+                                }while((str == "y") && (str == "Y"));
 
                                 objCustomer[newCustomerIndex] = new Customer(objTools.indexStoredUserID[newCustomerIndex], custUsername, custPass, custUserAge, custEmail, custPhn);
 
                                 objCustomer[newCustomerIndex].viewCustomerDetails();
+                                objCustomer[newCustomerIndex].passServiceNO(objServiceNo, newServiceNoIndex);
+
+                                System.out.println(objServiceNo);
 
 
                             }

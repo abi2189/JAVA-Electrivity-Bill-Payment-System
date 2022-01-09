@@ -18,6 +18,10 @@ public class Address {
         this.district= district;
         this.pinCode= pinCode;
     }
+
+    public String toString() {
+        return "House No: " + this.houseNo + "\nStreet Name: " + this.streetName + "\nCity: " + this.city + "\nDistrict: " + this.district + "\nPincode: " + this.pinCode;
+    }
 }
 
 
