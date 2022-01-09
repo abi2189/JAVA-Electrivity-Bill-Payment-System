@@ -22,7 +22,7 @@ public class Driver {
 
                 switch(logChoice) {
                     case 1:
-                        int temp=
+                        
                         break;
                     case 2:
                         // code block
@@ -43,7 +43,7 @@ public class Driver {
 
 
 
-
+    scan.close();
     }
     
 }

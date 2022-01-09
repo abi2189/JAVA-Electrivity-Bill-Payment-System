@@ -6,5 +6,4 @@ public class User {
     protected String userEmail;
 	protected String userPhn;
 
-
 }
