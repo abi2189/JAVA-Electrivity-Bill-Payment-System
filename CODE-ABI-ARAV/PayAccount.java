@@ -1,9 +1,9 @@
 import java.util.*;
 import java.text.*;
 
-public class PayAccount {
+public class payAccount {
     private  long accountNo;
-    private String cardholderName;
+    private String cardHolderName;
     private int postalCode;
     private String expiryDate;
     private Date date1;
@@ -12,11 +12,11 @@ public class PayAccount {
 
 
     //constructor
-    public PayAccount(){
+    public payAccount(){
     }
-    public PayAccount(long accountNo, String cardholderName, int postalCode, String expiryDate){
+    public payAccount(long accountNo, String cardHolderName, int postalCode, String expiryDate){
         this.accountNo=accountNo;
-        this.cardholderName=cardholderName;
+        this.cardHolderName=cardHolderName;
         this.postalCode=postalCode;
         this.expiryDate=expiryDate;
     }
@@ -26,8 +26,8 @@ public class PayAccount {
     public void setAccountNo(long accountNo){
         this.accountNo=accountNo;
     }
-    public void setCardholderName(String cardholderName){
-        this.cardholderName=cardholderName;
+    public void setCardHolderName(String cardHolderName){
+        this.cardHolderName=cardHolderName;
     }
     public void setPostalCode(int postalCode){
         this.postalCode=postalCode;
@@ -36,24 +36,22 @@ public class PayAccount {
         return this.accountNo;
     }
     public String getCardholderName(){
-        return this.cardholderName;
+        return this.cardHolderName;
     }
     public int getPostalCode(){
         return this.postalCode;
     }
 
-    public void setDate(String expiryDate) throws Exception{
+    public void setExpiryDate(String expiryDate) throws Exception{
         this.expiryDate = expiryDate;
         // Date date1=formatter1.parse(expiryDate); 
     }
-    public Date getDate() throws Exception{
+    public Date getExpiryDate() throws Exception{
         return formatter1.parse(expiryDate);
+    }//System.out.println(formatter1.format(pay.getDate());//cuz return type is date
+
+    //cannot use tosting since IT CANNOT THROW EXCEPTION
+    public void viewCardDetails() throws Exception{
+        System.out.println("Account Number: " + this.accountNo + "\nCard-Holder Name: " + this.cardHolderName + "\nPostal Code: " + this.postalCode +"\nEpiry Date: " + formatter1.format(this.getExpiryDate()));
     }
-
-
-    
-    //tostring
-    // public String toString(){
-    //     return String.format("Account Number: %o\nCard-Holder Name: %s\nPostal Code: %o\nEpiry Date: %s", accountNo,cardholderName,postalCode,ft.format(expiryDate));
-    // }
 }

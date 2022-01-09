@@ -8,14 +8,14 @@ public class test {
         // obj.setBillAmt(123.1f);
         // System.out.println(obj.getBillAmt());
 
-        String sDate1="31/12/2020";  
-        SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");    
-        Date date1=formatter1.parse(sDate1);  
-        System.out.println(sDate1+"\t"+date1); 
+        // String sDate1="31/12/2020";  
+        // SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");    
+        // Date date1=formatter1.parse(sDate1);  
+        // System.out.println(sDate1+"\t"+date1); 
 
-        PayAccount pay = new PayAccount();
-        pay.setDate("1/11/2020");
-        System.out.println(formatter1.format(pay.getDate());
+        // PayAccount pay = new PayAccount();
+        // pay.setDate("1/11/2020");
+        // System.out.println(formatter1.format(pay.getDate());
 
     // Date d = new Date();
 	// SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -80,6 +80,16 @@ public class test {
         // System.out.println(obj.createUserID());
         // System.out.println(obj.createFeedbackNo());
 
+        // Bill obj = new Bill(111,220,"23/11/2022");
+        // obj.setIssueDate("03/11/2022");
+        // obj.viewBillDates();
+
+        // payAccount p = new payAccount();
+        // p.setAccountNo(1234);
+        // p.setCardHolderName("hi");
+        // p.setPostalCode(1234);
+        // p.setExpiryDate("2/2/2222");
+        // p.viewCardDetails();
 
 
     }

@@ -5,6 +5,8 @@
 import java.util.*;
 import java.text.*;
 
+import java.time.LocalDate;
+
 public class Bill extends Payment{
     private otherCharges objOC;
     private energyCharges objEC;
@@ -17,13 +19,16 @@ public class Bill extends Payment{
 
     private int consUnits;
     
-    private Date issueDate = new Date();
-    private Date dueDate = new Date();
-    private Date disconDate = new Date();
+    private String issueDate;
+    private Date dueDate;
+    private Date disconDate;
+
+    SimpleDateFormat formatter=new SimpleDateFormat("dd/MM/yyyy"); 
 
     public Bill(){}
 
-    public Bill(int billNo,int  consUnits){//add issure date as well
+    //PASS these three values and everything gets calculated auto.
+    public Bill(int billNo, int consUnits, String issueD) throws Exception{
         this.billNo = billNo;
         this.consUnits = consUnits;
 
@@ -35,19 +40,32 @@ public class Bill extends Payment{
         objOC = new otherCharges();
         this.tOtherCharges = objOC.calculateTotalOtherCharges(this.consUnits, this.tEnergyCharges);
         System.out.println(objOC);
-        
+
         this.billAmt = this.tEnergyCharges + this.tOtherCharges;
         System.out.println("\nBill Amount: " + this.billAmt);
+
+        this.setIssueDate(issueD);
+        this.viewBillDates();
     }
 
-    public float getBillAmt(){
-        return billAmt;
-    } 
-
-    public void viewBillDates(){
-        
+    //all that you got to do is ==> PASS A STRING TO set function, and viewBillDates to view everything changing automatically.
+    public void setIssueDate(String issueDate) throws Exception{
+        this.issueDate = issueDate;
     }
+    public Date getIssueDate() throws Exception{
+        return formatter.parse(this.issueDate);
+    }//System.out.println(formatter1.format(pay.getDate());//cuz return type is date
 
 
-    
+    public void viewBillDates() throws Exception{
+        System.out.println("\nIssue Date: "+ formatter.format(this.getIssueDate()));
+
+        this.dueDate = getIssueDate();//date type
+        this.dueDate.setDate((this.dueDate.getDate() + 5));
+        System.out.println("Due Date: "+ formatter.format(this.dueDate));
+
+        this.disconDate = getIssueDate();
+        this.disconDate.setDate((this.disconDate.getDate() + 10));
+        System.out.println("Discontinued Date: "+ formatter.format(this.disconDate));
+    }
 }
