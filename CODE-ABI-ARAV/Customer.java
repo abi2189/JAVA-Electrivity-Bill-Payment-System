@@ -39,7 +39,7 @@ public class Customer extends User implements UserDetailsUpdate{
     //pass only if user opts to save his card
     public void passPayAccountObj(payAccount objPayAccount){
         this.objPayAccount = objPayAccount;
-        System.out.println("\nCARD SAVED!");
+        System.out.println(printLine+"\nCARD SAVED!");
     }
 
 

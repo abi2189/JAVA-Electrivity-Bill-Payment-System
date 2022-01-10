@@ -1,0 +1,21 @@
+		BILL RECIEPT	
+-----------------------------------	
+No. of Units Consumed: 290
+Tariff Slab: null
+Energy Charges Per Unit: 5.8
+Total Energy Charges: 1682.0
+-----------------------------------	
+FixedCharges: 100.5
+GST: 84.1
+Duty Charges: 2.6882648E36
+Total Other Charges: 1.14832644E18
+-----------------------------------	
+Bill Amount: 1.14832644E18
+Issue Date: 23/12/2021
+Due Date: 02/01/2022
+-----------------------------------	
+Transaction ID: 735680335886
+Payment Status: Payment Successful
+Transaction Date: 2022/01/11
+Transaction Time: 04:03:26
+-----------------------------------	

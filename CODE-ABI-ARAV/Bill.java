@@ -72,6 +72,10 @@ public class Bill extends Payment{
         this.disconDate.setDate((this.disconDate.getDate() + 20));
         System.out.println("Discontinued Date: "+ formatter.format(this.disconDate));
     }
+    public String viewBillDatesFile() throws Exception{
+        return ("\t\tBILL RECIEPT\t"+"\n-----------------------------------\t"+objEC.toString()+"\n-----------------------------------\t"+objOC.toString()+"\n-----------------------------------\t"+"\nBill Amount: " + this.billAmt+"\nIssue Date: "+ formatter.format(this.getIssueDate())+"\nDue Date: "+ formatter.format(this.dueDate)+"\n-----------------------------------\t");
+    }
+
 
     public void generateBill() throws Exception{
         System.out.println(objEC);//prints everything abt energy charges
