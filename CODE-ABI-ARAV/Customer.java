@@ -2,7 +2,7 @@ import java.util.*;
 import java.text.*;
 
 public class Customer extends User implements UserDetailsUpdate{
-
+    static String printLine = "--------------------------------------------------------------";
     private payAccount objPayAccount;
     private Feedback objFeedback;
 
@@ -29,8 +29,9 @@ public class Customer extends User implements UserDetailsUpdate{
 
     //only for logged in part
     public void viewServiceNoLogged(){
+        System.out.println(printLine);
         for (int i = 0; i < SNI; i++) {
-            System.out.println((i+1)+"."+this.objServiceNo[serviceNoIndices[i]].viewServiceNoLoggedC());
+            System.out.println("\n"+(i+1)+"."+this.objServiceNo[serviceNoIndices[i]].viewServiceNoLoggedC());
         }
 
     }
