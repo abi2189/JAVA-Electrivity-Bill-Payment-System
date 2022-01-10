@@ -250,15 +250,15 @@ public class Driver {
                                        
                                         case 2:{
                                             do{
+                                                objCustomer[loggedCustomerIndex].viewServiceNoLogged();
+                                                System.out.println("Choose service number");
+                                                int serviceNumberCh =scan.nextInt();
+                                                serviceNumberCh=0;////jus to check for the predefined value for 1st customer 1 service number
                                                 System.out.println(printLine);
                                                 System.out.println("\t\t\tMenu\n\t\t1.Pay Bill\n\t\t2.View History of bills\n\t\t3.Back to User Menu");
                                                 intChoice = scan.nextInt();
                                                 switch(intChoice){
                                                     case 1:{
-                                                        objCustomer[loggedCustomerIndex].viewServiceNoLogged();
-                                                        System.out.println("Choose service number");
-                                                        int serviceNumberCh =scan.nextInt();
-                                                        serviceNumberCh=0;
                                                         objCustomer[loggedCustomerIndex].objServiceNo[serviceNumberCh].getPaidBills();
 
                                                         break;
@@ -269,11 +269,12 @@ public class Driver {
                                                         System.out.println("Choose service number");
                                                         int serviceNumberCh =scan.nextInt();
                                                         serviceNumberCh=0;
-                                                        objCustomer[loggedCustomerIndex].objServiceNo[serviceNumberCh].getPaidBills();
+                                                        objCustomer[loggedCustomerIndex].objServiceNo[serviceNumberCh].getUnpaidBills();
                                                         
                                                         break;
 
                                                     }
+                                                    
 
 
                                                 }
