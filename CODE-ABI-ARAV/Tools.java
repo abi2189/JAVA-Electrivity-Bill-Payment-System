@@ -153,6 +153,12 @@ public class Tools {
         objCustomer[1] = new Customer(230308L, "Aravind", "cust123", 19, "arav@gmail.com", 2222222222L);
         objCustomer[2] = new Customer(247082L, "Maddy", "cust123", 19, "maddy@gmail.com", 3333333333L);
         //add 1 more predefined-done, 3 more auto(check driver) for admin to view
-        this.setUserIDInitialIndex(2);
+        this.setUserIDInitialIndex(3);
     }
-};
+    public void preAdmin(Admin[] objAdmin){
+        
+        objAdmin[0] = new Admin(12345678L, "lucas", "admin123", 25, "lucas123@eboi.co.in", 7834672366L);
+        objAdmin[1] = new Admin(22345678L, "Harry", "admin223", 26, "Harry223@eboi.co.in", 9449047389L);
+        objAdmin[2] = new Admin(32345678L, "Cole", "admin323", 29, "Cole323@eboi.co.in", 6734892578L);
+    }
+}

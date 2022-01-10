@@ -27,6 +27,9 @@ public class Customer extends User implements UserDetailsUpdate{
     public void viewCustomerDetails(){
         System.out.println(super.toString());
     }
+    public void adminViewCustomerDetails(){
+        System.out.println(UadminViewCustomerDetails());
+    }
 
     //FEEDBACK AND PAYMENT SET AND VIEW DETAILS 
     public void setFeedbackDetails(String feedbackDesc,Date feedbackDate){

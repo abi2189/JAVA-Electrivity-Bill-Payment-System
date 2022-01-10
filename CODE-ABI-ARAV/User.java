@@ -22,6 +22,9 @@ public class User {
         this.userEmail=userEmail; 
         this.userPhn=userPhn; 
     }
+    public String UadminViewCustomerDetails(){
+        return userID+"\t"+userName+"\t  "+userAge+"\t"+userEmail+"\t"+userPhn;
+    }
     public String toString(){
         return "User ID: "+userID+"\nUser Name: "+userName+"\nUser Age: "+userAge+"\nUser Email: "+userEmail+"\nUser Phn: "+userPhn;
     }
