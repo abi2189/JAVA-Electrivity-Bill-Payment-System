@@ -158,7 +158,7 @@ public class Tools {
         
         // =======================indexStoredUserID[0]
         indexStoredUserID[0] = 202208L;
-        objCustomer[0] = new Customer(indexStoredUserID[0], "Abirami", "cust123", 19, "abi@gmail.com", 1111111111L);
+        objCustomer[0] = new Customer(indexStoredUserID[0], "Abirami", "cust123", 22, "abi@gmail.com", 7834672366L);
 
         objCustomer[0].serviceNoIndices[0]=this.linearSearchIndex(this.createServiceNo());//auto updating the last index pointing variable
         newServiceNoIndex = objCustomer[0].serviceNoIndices[0];
@@ -168,7 +168,7 @@ public class Tools {
 
         objCustomer[0].serviceNoIndices[1]=this.linearSearchIndex(this.createServiceNo());
         newServiceNoIndex = objCustomer[0].serviceNoIndices[1];
-        objAddress = new Address(0,"Dharani Nagar","Vennamalai","Karur",639009L);
+        objAddress = new Address(190,"Dharani Nagar","Vennamalai","Karur",639009L);
         objServiceNo = new serviceNo(indexStoredServiceNo[newServiceNoIndex], objAddress);
         objCustomer[0].passServiceNo(objServiceNo, newServiceNoIndex);
 
@@ -176,11 +176,38 @@ public class Tools {
 
 
         // =======================indexStoredUserID[1]
-        indexStoredUserID[1] = 230308L;
-        objCustomer[1] = new Customer(indexStoredUserID[1], "Aravind", "cust123", 19, "arav@gmail.com", 2222222222L);
+        indexStoredUserID[1] = 202208L;
+        objCustomer[1] = new Customer(indexStoredUserID[1], "Aravind", "cust123", 26, "arav@gmail.com", 9449047389L);
+
+        objCustomer[1].serviceNoIndices[1]=this.linearSearchIndex(this.createServiceNo());//auto updating the last index pointing variable
+        newServiceNoIndex = objCustomer[1].serviceNoIndices[1];
+        objAddress = new Address(33,"Mangesh Sadan, L J Road, Opp Dhuru Hall","Mumbai","Maharashtra",400016L);
+        objServiceNo = new serviceNo(indexStoredServiceNo[newServiceNoIndex], objAddress);
+        objCustomer[1].passServiceNo(objServiceNo, newServiceNoIndex);
+
+        objCustomer[1].serviceNoIndices[1]=this.linearSearchIndex(this.createServiceNo());
+        newServiceNoIndex = objCustomer[1].serviceNoIndices[1];
+        objAddress = new Address(11/5,"Gautam Nagar","Noida","Delhi",639009L);
+        objServiceNo = new serviceNo(indexStoredServiceNo[newServiceNoIndex], objAddress);
+        objCustomer[1].passServiceNo(objServiceNo, newServiceNoIndex);
+
+        objCustomer[1].SNI=2;
+        //============================================================
+       
 
         indexStoredUserID[2] = 247082L;
-        objCustomer[2] = new Customer(indexStoredUserID[2], "Maddy", "cust123", 19, "maddy@gmail.com", 3333333333L);
+        objCustomer[2] = new Customer(indexStoredUserID[2], "Maddy", "cust123", 33, "maddy@gmail.com", 6734892578L);
+
+        objCustomer[2].serviceNoIndices[2]=this.linearSearchIndex(this.createServiceNo());//auto updating the last index pointing variable
+        newServiceNoIndex = objCustomer[2].serviceNoIndices[1];
+        objAddress = new Address(23,"Sukhamani Palace, Veer Savarkar Marg","Mumbai","Maharashtra",400016L);
+        objServiceNo = new serviceNo(indexStoredServiceNo[newServiceNoIndex], objAddress);
+        objCustomer[2].passServiceNo(objServiceNo, newServiceNoIndex);
+
+        
+
+        objCustomer[2].SNI=2;
+       
         //add 1 more predefined-done, 3 more auto(check driver) for admin to view
         this.setUserIDInitialIndex(3);
     }

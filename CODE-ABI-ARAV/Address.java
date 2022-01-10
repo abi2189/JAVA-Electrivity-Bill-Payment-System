@@ -18,6 +18,9 @@ public class Address {
         this.district= district;
         this.pinCode= pinCode;
     }
+    public String viewAddressLogged() {
+        return "" + this.houseNo +",  " + this.streetName + "\n\t" + this.city +",  " +  this.district + "\n\tPincode: " + this.pinCode;
+    }
 
     public String toString() {
         return "House No: " + this.houseNo + "\nStreet Name: " + this.streetName + "\nCity: " + this.city + "\nDistrict: " + this.district + "\nPincode: " + this.pinCode;

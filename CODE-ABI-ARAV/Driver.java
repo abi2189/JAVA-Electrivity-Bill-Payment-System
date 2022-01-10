@@ -30,8 +30,7 @@ public class Driver {
             System.out.println(printLine);
 
             switch (intChoice) {
-                // -----------------------------------------------------CUSTOMER
-                // --------------------------------------------
+                // -----------------------------------------------------CUSTOMER--------------------------------------------
                 case 1: {
                     do {
                         System.out.println(printLine + "\n\t\t\tCUSTOMER");
@@ -41,6 +40,7 @@ public class Driver {
                         intChoice = scan.nextInt();
 
                         switch (intChoice) {
+                            // -----------------------------------------------------CUSTOMER REGISTER--------------------------------------------
                             case 1: {
                                 int newCustomerIndex = objTools.linearSearchIndex(objTools.createUserID());
                                 System.out.println("Your Auto-Generated Customer ID: "
@@ -136,6 +136,7 @@ public class Driver {
 
                                 break;
                             }
+                            // -----------------------------------------------------CUSTOMER LOGIN--------------------------------------------
 
                             case 2: {
                                 // System.out.println("ha");
@@ -190,8 +191,7 @@ public class Driver {
                                 }
                                 do {
                                     System.out.println(printLine);
-                                    System.out.println(
-                                            "\t\t\tMenu\n\t\t1.Update Profile\n\t\t2.Bill Payment\n\t\t3.LOG OUT");
+                                    System.out.println("\t\t\tUser Menu\n\t\t1.Update Profile\n\t\t2.Bill Payment\n\t\t3.LOG OUT");
                                     intChoice = scan.nextInt();
                                     switch (intChoice) {
                                         case 1: {
@@ -249,7 +249,15 @@ public class Driver {
             
                                        
                                         case 2:{
-                                            objCustomer[loggedCustomerIndex].viewServiceNoLogged();
+                                            do{
+                                                System.out.println(printLine);
+                                                System.out.println("\t\t\tMenu\n\t\t1.Pay Bill\n\t\t2.View History of bills\n\t\t3.Back to User Menu");
+                                                intChoice = scan.nextInt();
+                                                objCustomer[loggedCustomerIndex].viewServiceNoLogged();
+
+                                            }while (true);
+
+                                            // objCustomer[loggedCustomerIndex].viewServiceNoLogged();
                                             
                                         }
             
@@ -290,9 +298,7 @@ public class Driver {
                     int userCheckCount = 5;
                     int loggedAdmin = 0;
                     System.out.println(printLine + "\n\t\t\tADMIN LOGIN");
-                    // System.out.println(printLine);
-
-                    
+                    // System.out.println(printLine);                    
 
                     do {
                         System.out.println("ENTER ADMIN ID:");
@@ -394,7 +400,7 @@ public class Driver {
                             case 2: {
                                 System.out.println("USERID\tUSER NAME  AGE\tEMAIL\t\tPHONE NO\n" + printLine);
 
-                                for (int i = 0; i < 3; i++) {
+                                for (int i = 0; i < objTools.getUserIDLastIndex()-1; i++) {
                                     objCustomer[i].adminViewCustomerDetails();
                                 }
                             }
@@ -406,7 +412,7 @@ public class Driver {
 
                                 //                         last plus one value(n)
                                 for (int i = 3; i < objTools.getUserIDLastIndex(); i++) {
-
+                                
                                     objCustomer[i].adminViewCustomerDetails();
                                     System.out.println("Approve User?(y/n)");
                                     charChoice = scan.next().charAt(0);

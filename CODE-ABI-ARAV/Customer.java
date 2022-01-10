@@ -30,7 +30,7 @@ public class Customer extends User implements UserDetailsUpdate{
     //only for logged in part
     public void viewServiceNoLogged(){
         for (int i = 0; i < SNI; i++) {
-            System.out.println(this.objServiceNo[serviceNoIndices[i]].toString());
+            System.out.println(this.objServiceNo[serviceNoIndices[i]].viewServiceNoLogged());
         }
 
     }
