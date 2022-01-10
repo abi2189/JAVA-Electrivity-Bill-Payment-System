@@ -72,17 +72,26 @@ public class Driver {
                                     }
                                 } while (str.length() != 10);
 
+                                //NEW CUSTOMER CREATION
+                                objCustomer[newCustomerIndex] = new Customer(objTools.indexStoredUserID[newCustomerIndex], custUsername, custPass, custUserAge, custEmail, custPhn);
+
                                 String houseNo;
                                 String streetName;
                                 String city;
                                 String district;
                                 int pinCode;
 
-                                Address objAddress;
+                                Address objAddress;//just ref
                                 serviceNo objServiceNo;
                                 int newServiceNoIndex;
 
-                                do {
+                                int[] serviceNoIndices = new int[10];
+                                int SNI;
+                                SNI = 0;
+
+                                char strC;
+
+                                do{
 
                                     System.out.println(
                                             "Enter Address Details of the building/office for which your paying electricity");
@@ -100,24 +109,30 @@ public class Driver {
                                     objAddress = new Address(houseNo, streetName, city, district, pinCode);
 
                                     newServiceNoIndex = objTools.linearSearchIndex(objTools.createServiceNo());
-                                    System.out.println("Your Auto-Generated Service No. for this address: "
-                                            + objTools.indexStoredServiceNo[newServiceNoIndex]);
+                                    System.out.println("Your Auto-Generated Service No. for this address: " + objTools.indexStoredServiceNo[newServiceNoIndex]);
 
-                                    objServiceNo = new serviceNo(newServiceNoIndex, objAddress);
+                                    serviceNoIndices[SNI] = newServiceNoIndex;
+                                    SNI++;
 
-                                    System.out
-                                            .print("Do you want to add address of another building that you own?(y/n)");
-                                    str = scan.next();
-                                } while ((str == "y") && (str == "Y"));
+                                    objServiceNo = new serviceNo(objTools.indexStoredServiceNo[newServiceNoIndex],objAddress);
+                                    objCustomer[newCustomerIndex].passServiceNo(objServiceNo, newServiceNoIndex);
 
-                                objCustomer[newCustomerIndex] = new Customer(
-                                        objTools.indexStoredUserID[newCustomerIndex], custUsername, custPass,
-                                        custUserAge, custEmail, custPhn);
+                                    
 
+
+
+
+                                    System.out.print("Do you want to add address of another building that you own?(y/n): ");
+                                    strC = scan.next().charAt(0);
+                                }while((strC == 'y') || (strC == 'Y'));
+
+                                
                                 objCustomer[newCustomerIndex].viewCustomerDetails();
-                                objCustomer[newCustomerIndex].passServiceNO(objServiceNo, newServiceNoIndex);
 
-                                System.out.println(objServiceNo);
+                                objCustomer[newCustomerIndex].viewServiceNo(serviceNoIndices, SNI);
+
+                                // System.out.println(objServiceNo);//last obj
+
 
                                 break;
                             }
@@ -214,13 +229,12 @@ public class Driver {
                                                 }
                                             } while (true);
                                         }
-
+            
+                                       
                                         case 2:
-
-                                        case 3: {
-                                            break;
-                                        }
-
+            
+                                        case 3:{break;}
+            
                                     }
                                     if (intChoice == 3) {
                                         break;

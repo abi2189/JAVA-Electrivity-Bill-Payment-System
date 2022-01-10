@@ -9,7 +9,7 @@ public class serviceNo {
     }
 
     public String toString(){
-        return this.objAddress.toString();
+        return "\nService No.: " + this.serviceNo + "\nAssociated Address: \n" + this.objAddress.toString(); 
     }
 
 

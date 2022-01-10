@@ -9,10 +9,16 @@ public class Customer extends User implements UserDetailsUpdate{
     // public Tools objTools1;
     public serviceNo[] objServiceNo = new serviceNo[100];
 
-    public void passServiceNO(serviceNo objServiceNo, int serviceNoIndex) {
+    public void passServiceNo(serviceNo objServiceNo, int newServiceNoIndex) {
 
-        this.objServiceNo[serviceNoIndex] = objServiceNo;//create new obj service no outside
+        this.objServiceNo[newServiceNoIndex] = objServiceNo;//create new obj service no outside
         // ref cuz [] allocating mem, passed service no. is a new obj.
+    }
+    public void viewServiceNo(int[] serviceNoIndices, int SNI){
+        for (int i = 0; i < SNI; i++) {
+            // System.out.println("LOOP: " + i);
+            System.out.println(this.objServiceNo[serviceNoIndices[i]].toString());
+        }
     }
 
 
