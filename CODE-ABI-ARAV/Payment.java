@@ -1,4 +1,6 @@
 public class Payment {
-    int p;
+    long transactionID;
+    String payStatus;
+    
     
 }

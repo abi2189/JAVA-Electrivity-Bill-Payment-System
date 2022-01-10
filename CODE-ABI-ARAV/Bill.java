@@ -79,8 +79,6 @@ public class Bill extends Payment{
         
         this.setIssueDate(this.issueDate);
         this.viewBillDates();
-
-
  
     }
 }
