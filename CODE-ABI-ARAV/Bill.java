@@ -61,11 +61,13 @@ public class Bill extends Payment{
         System.out.println("\nIssue Date: "+ formatter.format(this.getIssueDate()));
 
         this.dueDate = getIssueDate();//date type
-        this.dueDate.setDate((this.dueDate.getDate() + 5));
+        this.dueDate.setDate((this.dueDate.getDate() + 10));
         System.out.println("Due Date: "+ formatter.format(this.dueDate));
 
+        System.out.println("Bill Amount after Due date: " + ((0.1*billAmt)+billAmt));
+
         this.disconDate = getIssueDate();
-        this.disconDate.setDate((this.disconDate.getDate() + 10));
+        this.disconDate.setDate((this.disconDate.getDate() + 20));
         System.out.println("Discontinued Date: "+ formatter.format(this.disconDate));
     }
 }

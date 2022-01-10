@@ -91,6 +91,9 @@ public class test {
         // p.setExpiryDate("2/2/2222");
         // p.viewCardDetails();
 
+        Bill b = new Bill(111,12,"23/11/02");
+        
+
 
     }
 }

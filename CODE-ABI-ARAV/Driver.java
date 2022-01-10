@@ -75,11 +75,11 @@ public class Driver {
                                 //NEW CUSTOMER CREATION
                                 objCustomer[newCustomerIndex] = new Customer(objTools.indexStoredUserID[newCustomerIndex], custUsername, custPass, custUserAge, custEmail, custPhn);
 
-                                String houseNo;
+                                int houseNo;
                                 String streetName;
                                 String city;
                                 String district;
-                                int pinCode;
+                                long pinCode;
 
                                 Address objAddress;//just ref
                                 serviceNo objServiceNo;
@@ -96,7 +96,7 @@ public class Driver {
                                     System.out.println(
                                             "Enter Address Details of the building/office for which your paying electricity");
                                     System.out.print("\nEnter house No.: ");
-                                    houseNo = scan.next();
+                                    houseNo = scan.nextInt();
                                     System.out.print("\nEnter street name: ");
                                     streetName = scan.next();
                                     System.out.print("\nEnter city: ");
@@ -104,7 +104,7 @@ public class Driver {
                                     System.out.print("\nEnter district: ");
                                     district = scan.next();
                                     System.out.print("\nEnter pincode: ");
-                                    pinCode = scan.nextInt();
+                                    pinCode = scan.nextLong();
 
                                     objAddress = new Address(houseNo, streetName, city, district, pinCode);
 
@@ -139,23 +139,40 @@ public class Driver {
 
                             case 2: {
                                 // System.out.println("ha");
-                                int loggedCustomer = 0;
-                                boolean userCheck = false;
-                                int userCheckCount = 5;
+                                int loggedCustomerIndex = 0;//index
+                                boolean userCheck = false;//for some printing statements
+                                int userCheckCount = 5;//attempts
                                 do {
                                     System.out.print("Enter User ID: ");
                                     Long custLogID = scan.nextLong();
                                     System.out.print("Enter Password: ");
                                     String custLogPass = scan.next();
-                                    for (int i = 0; i < 3; i++) {
-                                        if (custLogID == objCustomer[i].userID
-                                                && objCustomer[i].userPass.equals(custLogPass)) {
+
+                                    
+                                    loggedCustomerIndex = objTools.linearSearchIndex(custLogID);
+                                    if(loggedCustomerIndex == 999){
+                                        userCheck=false;
+                                    } else if (loggedCustomerIndex != 999) {
+                                        userCheck=false;//partially true
+                                        
+                                        if(objCustomer[loggedCustomerIndex].userPass.equals(custLogPass)){
+                                            userCheck=true;
                                             System.out.println("Login Successfull...\n" + printLine);
-                                            loggedCustomer = i;
-                                            userCheck = true;
                                             break;
                                         }
                                     }
+
+
+
+                                    // for (int i = 0; i < 3; i++) {
+                                    //     if (custLogID == objCustomer[i].userID
+                                    //             && objCustomer[i].userPass.equals(custLogPass)) {
+                                    //         System.out.println("Login Successfull...\n" + printLine);
+                                    //         loggedCustomerIndex = i;
+                                    //         userCheck = true;
+                                    //         break;
+                                    //     }
+                                    // }
                                     if (userCheck == false) {
 
                                         System.out.println(printLine + "\nINVALID CREDENTIALS TRY AGAIN");
@@ -188,36 +205,36 @@ public class Driver {
                                                         System.out.println(printLine);
                                                         System.out.println("Enter New User Name:");
                                                         String updateName = scan.next();
-                                                        objCustomer[loggedCustomer].changeUserName(updateName);
+                                                        objCustomer[loggedCustomerIndex].changeUserName(updateName);
                                                         System.out.println(printLine);
-                                                        System.out.println(objCustomer[loggedCustomer]);
+                                                        System.out.println(objCustomer[loggedCustomerIndex]);
                                                         break;
                                                     }
                                                     case 2: {
                                                         System.out.println(printLine);
                                                         System.out.println("Enter New Age:");
                                                         int updateAge = scan.nextInt();
-                                                        objCustomer[loggedCustomer].changeUserAge(updateAge);
+                                                        objCustomer[loggedCustomerIndex].changeUserAge(updateAge);
                                                         System.out.println(printLine);
-                                                        System.out.println(objCustomer[loggedCustomer]);
+                                                        System.out.println(objCustomer[loggedCustomerIndex]);
                                                         break;
                                                     }
                                                     case 3: {
                                                         System.out.println(printLine);
                                                         System.out.println("Enter New Mobile Number:");
                                                         long updatePhn = scan.nextLong();
-                                                        objCustomer[loggedCustomer].changeUserPhn(updatePhn);
+                                                        objCustomer[loggedCustomerIndex].changeUserPhn(updatePhn);
                                                         System.out.println(printLine);
-                                                        System.out.println(objCustomer[loggedCustomer]);
+                                                        System.out.println(objCustomer[loggedCustomerIndex]);
                                                         break;
                                                     }
                                                     case 4: {
                                                         System.out.println(printLine);
                                                         System.out.println("Enter New Email:");
                                                         String updateEmail = scan.next();
-                                                        objCustomer[loggedCustomer].changeEmail(updateEmail);
+                                                        objCustomer[loggedCustomerIndex].changeEmail(updateEmail);
                                                         System.out.println(printLine);
-                                                        System.out.println(objCustomer[loggedCustomer]);
+                                                        System.out.println(objCustomer[loggedCustomerIndex]);
                                                         break;
                                                     }
                                                     case 5: {
@@ -231,7 +248,10 @@ public class Driver {
                                         }
             
                                        
-                                        case 2:
+                                        case 2:{
+                                            objCustomer[loggedCustomerIndex].viewServiceNoLogged();
+                                            
+                                        }
             
                                         case 3:{break;}
             
@@ -384,7 +404,8 @@ public class Driver {
                                 System.out.println("NEW USER REGISTRATIONS");
                                 System.out.println("USERID\tUSER NAME  AGE\tEMAIL\t\tPHONE NO\n" + printLine);
 
-                                for (int i = 3; i < ; i++) {
+                                //                         last plus one value(n)
+                                for (int i = 3; i < objTools.getUserIDLastIndex(); i++) {
 
                                     objCustomer[i].adminViewCustomerDetails();
                                     System.out.println("Approve User?(y/n)");

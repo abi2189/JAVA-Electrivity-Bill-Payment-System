@@ -1,17 +1,17 @@
 public class Address {
 
-    private String houseNo;
+    private int houseNo;
     private String streetName;
     private String city;
     private String district;
-    private int pinCode;
+    private long pinCode;
 
 
     //concstructor
     public Address(){
     }
 
-    public Address(String houseNo, String streetName, String city, String district ,int pinCode){
+    public Address(int houseNo, String streetName, String city, String district ,long pinCode){
         this.houseNo= houseNo;
         this.streetName= streetName;
         this.city= city;

@@ -8,17 +8,31 @@ public class Customer extends User implements UserDetailsUpdate{
 
     // public Tools objTools1;
     public serviceNo[] objServiceNo = new serviceNo[100];
+    public int[] serviceNoIndices = new int[10];
+    public int SNI;
 
     public void passServiceNo(serviceNo objServiceNo, int newServiceNoIndex) {
 
-        this.objServiceNo[newServiceNoIndex] = objServiceNo;//create new obj service no outside
+        this.objServiceNo[newServiceNoIndex] = objServiceNo;//create new obj service no outside in the driver
         // ref cuz [] allocating mem, passed service no. is a new obj.
     }
+
+    //only for register part
     public void viewServiceNo(int[] serviceNoIndices, int SNI){
+        this.SNI = SNI;
         for (int i = 0; i < SNI; i++) {
             // System.out.println("LOOP: " + i);
+            this.serviceNoIndices[i] = serviceNoIndices[i];
             System.out.println(this.objServiceNo[serviceNoIndices[i]].toString());
         }
+    }
+
+    //only for logged in part
+    public void viewServiceNoLogged(){
+        for (int i = 0; i < SNI; i++) {
+            System.out.println(this.objServiceNo[serviceNoIndices[i]].toString());
+        }
+
     }
 
 

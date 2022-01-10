@@ -20,6 +20,9 @@ public class Tools {
     public void setUserIDInitialIndex(int u){
         this.u = u;
     }
+    public int getUserIDLastIndex(){
+        return this.u;
+    }
 
     // CREATE NUMBERS
     public long createFeedbackNo(){
@@ -148,13 +151,42 @@ public class Tools {
 
     // PREDEFINED CUSTOMER DETAILS
     public void preCustomer(Customer[] objCustomer){
-        int newCustomerIndex = this.linearSearchIndex(this.createUserID());
-        objCustomer[0] = new Customer(202208L, "Abirami", "cust123", 19, "abi@gmail.com", 1111111111L);
-        objCustomer[1] = new Customer(230308L, "Aravind", "cust123", 19, "arav@gmail.com", 2222222222L);
-        objCustomer[2] = new Customer(247082L, "Maddy", "cust123", 19, "maddy@gmail.com", 3333333333L);
+        int newCustomerInde;
+        int newServiceNoIndex;
+        serviceNo objServiceNo;
+        Address objAddress;
+        
+        // =======================indexStoredUserID[0]
+        indexStoredUserID[0] = 202208L;
+        objCustomer[0] = new Customer(indexStoredUserID[0], "Abirami", "cust123", 19, "abi@gmail.com", 1111111111L);
+
+        objCustomer[0].serviceNoIndices[0]=this.linearSearchIndex(this.createServiceNo());//auto updating the last index pointing variable
+        newServiceNoIndex = objCustomer[0].serviceNoIndices[0];
+        objAddress = new Address(402,"NCC Urban Senate, Thannikal Keerthy Nagar Rd","Elammakara","Kochi",560024L);
+        objServiceNo = new serviceNo(indexStoredServiceNo[newServiceNoIndex], objAddress);
+        objCustomer[0].passServiceNo(objServiceNo, newServiceNoIndex);
+
+        objCustomer[0].serviceNoIndices[1]=this.linearSearchIndex(this.createServiceNo());
+        newServiceNoIndex = objCustomer[0].serviceNoIndices[1];
+        objAddress = new Address(0,"Dharani Nagar","Vennamalai","Karur",639009L);
+        objServiceNo = new serviceNo(indexStoredServiceNo[newServiceNoIndex], objAddress);
+        objCustomer[0].passServiceNo(objServiceNo, newServiceNoIndex);
+
+        objCustomer[0].SNI=2;
+
+
+        // =======================indexStoredUserID[1]
+        indexStoredUserID[1] = 230308L;
+        objCustomer[1] = new Customer(indexStoredUserID[1], "Aravind", "cust123", 19, "arav@gmail.com", 2222222222L);
+
+        indexStoredUserID[2] = 247082L;
+        objCustomer[2] = new Customer(indexStoredUserID[2], "Maddy", "cust123", 19, "maddy@gmail.com", 3333333333L);
         //add 1 more predefined-done, 3 more auto(check driver) for admin to view
         this.setUserIDInitialIndex(3);
     }
+
+
+    
     public void preAdmin(Admin[] objAdmin){
         
         objAdmin[0] = new Admin(12345678L, "lucas", "admin123", 25, "lucas123@eboi.co.in", 7834672366L);
