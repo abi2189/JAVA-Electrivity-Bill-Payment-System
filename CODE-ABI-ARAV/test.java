@@ -91,9 +91,11 @@ public class test {
         // p.setExpiryDate("2/2/2222");
         // p.viewCardDetails();
 
-        Bill b = new Bill(111,120,"23/11/02");
-        b.generateBill();;
+        // Bill b = new Bill(111,120,"23/11/02");
+        // b.generateBill();;
 
+        Payment p = new Payment(11111,"success");
+        System.out.println(p.toString());
 
     }
 }
