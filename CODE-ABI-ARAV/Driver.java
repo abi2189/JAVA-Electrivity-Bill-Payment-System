@@ -24,10 +24,10 @@ public class Driver {
         do {
             System.out.println(printLine + "\n\t\t\tADMIN/CUSTOMER");
             System.out.println("\t\t1.CUSTOMER 2.ADMIN\n" + printLine);
-            System.out.print("ENTER CHOICE:");
+            System.out.print("ENTER CHOICE: ");
 
             intChoice = scan.nextInt();
-            System.out.println(printLine);
+            
 
             switch (intChoice) {
                 // -----------------------------------------------------CUSTOMER--------------------------------------------
@@ -35,7 +35,7 @@ public class Driver {
                     do {
                         System.out.println(printLine + "\n\t\t\tCUSTOMER");
                         System.out.println("\t\t1.REGISTER 2.LOGIN\n" + printLine);
-                        System.out.print("ENTER CHOICE\n" + printLine);
+                        System.out.print("ENTER CHOICE: ");
 
                         intChoice = scan.nextInt();
 
@@ -43,18 +43,18 @@ public class Driver {
                             // -----------------------------------------------------CUSTOMER REGISTER--------------------------------------------
                             case 1: {
                                 int newCustomerIndex = objTools.linearSearchIndex(objTools.createUserID());
-                                System.out.println("Your Auto-Generated Customer ID: "
+                                System.out.println(printLine+"Your Auto-Generated Customer ID: "
                                         + objTools.indexStoredUserID[newCustomerIndex]);
 
-                                System.out.print(printLine + "\nEnter User Name: ");
+                                System.out.print("Enter User Name: ");
                                 String custUsername = scan.next();
                                 System.out.print("Set Password: ");
                                 String custPass = scan.next();
-                                System.out.println("Enter User Age:");
+                                System.out.print("Enter User Age:");
                                 int custUserAge = scan.nextInt();
                                 String custEmail;
                                 do {
-                                    System.out.println("Enter User Email:");
+                                    System.out.print("Enter User Email:");
                                     custEmail = scan.next();
                                     if (!custEmail.endsWith("@gmail.com")) {
                                         System.out.println("Invalid Email!");
@@ -63,7 +63,7 @@ public class Driver {
                                 Long custPhn;
                                 String str;
                                 do {
-                                    System.out.println("Enter Phone Number:");
+                                    System.out.print("Enter Phone Number:");
                                     custPhn = scan.nextLong();
                                     str = Long.toString(custPhn);
                                     if (str.length() != 10) {
@@ -93,17 +93,16 @@ public class Driver {
 
                                 do{
 
-                                    System.out.println(
-                                            "Enter Address Details of the building/office for which your paying electricity");
-                                    System.out.print("\nEnter house No.: ");
+                                    System.out.println(printLine+"Enter Address Details of the building/office for which your paying electricity");
+                                    System.out.print("Enter house No.: ");
                                     houseNo = scan.nextInt();
-                                    System.out.print("\nEnter street name: ");
+                                    System.out.print("Enter street name: ");
                                     streetName = scan.next();
-                                    System.out.print("\nEnter city: ");
+                                    System.out.print("Enter city: ");
                                     city = scan.next();
-                                    System.out.print("\nEnter district: ");
+                                    System.out.print("Enter district: ");
                                     district = scan.next();
-                                    System.out.print("\nEnter pincode: ");
+                                    System.out.print("Enter pincode: ");
                                     pinCode = scan.nextLong();
 
                                     objAddress = new Address(houseNo, streetName, city, district, pinCode);
@@ -122,7 +121,7 @@ public class Driver {
 
 
 
-                                    System.out.print("Do you want to add address of another building that you own?(y/n): ");
+                                    System.out.print(printLine+"Do you want to add address of another building that you own?(y/n): ");
                                     strC = scan.next().charAt(0);
                                 }while((strC == 'y') || (strC == 'Y'));
 
@@ -158,7 +157,7 @@ public class Driver {
                                         
                                         if(objCustomer[loggedCustomerIndex].userPass.equals(custLogPass)){
                                             userCheck=true;
-                                            System.out.println("Login Successfull...\n" + printLine);
+                                            System.out.println("Login Successfull...");
                                             break;
                                         }
                                     }
@@ -251,25 +250,30 @@ public class Driver {
                                         case 2:{
                                             do{
                                                 objCustomer[loggedCustomerIndex].viewServiceNoLogged();
-                                                System.out.println("Choose service number");
+                                                System.out.print(printLine+"\nChoose service number:");
                                                 int serviceNumberCh =scan.nextInt();
                                                 serviceNumberCh=0;////jus to check for the predefined value for 1st customer 1 service number
                                                 System.out.println(printLine);
-                                                System.out.println("\t\t\tMenu\n\t\t1.Pay Bill\n\t\t2.View History of bills\n\t\t3.Back to User Menu");
+                                                System.out.println("\t\t\tBill Payment Menu\n\t\t1.PAID BILLS\n\t\t2.UNPAID BILLS\n\t\t3.Back to USER MENU");
                                                 intChoice = scan.nextInt();
                                                 switch(intChoice){
                                                     case 1:{
                                                         objCustomer[loggedCustomerIndex].objServiceNo[serviceNumberCh].getPaidBills();
-
                                                         break;
 
                                                     }
                                                     case 2:{
-                                                        objCustomer[loggedCustomerIndex].viewServiceNoLogged();
-                                                        System.out.println("Choose service number");
-                                                        int serviceNumberCh =scan.nextInt();
-                                                        serviceNumberCh=0;
                                                         objCustomer[loggedCustomerIndex].objServiceNo[serviceNumberCh].getUnpaidBills();
+                                                        // System.out.print(printLine+"\nChoose Bill number to PAY:");
+                                                        // int payBillCh =scan.nextInt();
+                                                        // System.out.println(printLine+"\n\t\t\tPAYMENT"+printLine);
+                                                        // System.out.print("Enter Account Number: ");
+                                                        // Long accountNo = scan.nextLong();
+                                                        // System.out.print("Enter Card Holder: ");
+                                                        // String custLogPass = scan.next();
+
+
+
                                                         
                                                         break;
 
