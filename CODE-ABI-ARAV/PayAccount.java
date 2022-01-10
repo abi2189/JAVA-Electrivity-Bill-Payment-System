@@ -6,7 +6,7 @@ public class payAccount {
     private String cardHolderName;
     private int postalCode;
     private String expiryDate;
-    private Date date1;
+    // private Date date1;
 
     SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");  
 

@@ -85,8 +85,21 @@ service class --> new [] bills
     2.Login
         +1.update Details
         2.bill payment 
-            1.payable bill  -->back to menu after login
-            2.view prev bill 
+            service no. view(1,2)
+            1.paid bill
+                view of all paid bills
+            2.unpaid bill
+                view of unpaid bills
+                which bill do hyou choose to pay
+                
+                ask and store in local variable --> card details 
+                last q --> do you opt for auto renewal;
+                payAccount
+                card opted for auto renewal prrint; => payAccount.toString();
+
+                TRANSACTION Successfull
+                print transactionID tagged to bill and the bill amount; date and time;
+                back to the bill menu
 
 
 2.Admin
