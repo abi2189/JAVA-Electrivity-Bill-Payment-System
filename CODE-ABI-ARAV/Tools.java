@@ -191,6 +191,21 @@ public class Tools {
         objServiceNo = new serviceNo(indexStoredServiceNo[newServiceNoIndex], objAddress);
         objCustomer[0].passServiceNo(objServiceNo, newServiceNoIndex);
 
+        objBill = new Bill(this.createBillNo(), 320, "23/11/2021");
+        objServiceNo.generateUnpaidBills(objBill);
+        objBill = new Bill(this.createBillNo(), 290, "23/12/2021");
+        objServiceNo.generateUnpaidBills(objBill);
+        
+        objBill = new Bill(this.createBillNo(), 210, "23/7/2021");
+        objServiceNo.generatePaidBills(objBill);
+        objBill = new Bill(this.createBillNo(), 260, "23/8/2021");
+        objServiceNo.generatePaidBills(objBill);
+        objBill = new Bill(this.createBillNo(), 310, "23/9/2021");
+        objServiceNo.generatePaidBills(objBill);
+
+        
+        objCustomer[0].passServiceNo(objServiceNo, newServiceNoIndex);
+
         objCustomer[0].SNI=2;
 
 
@@ -199,8 +214,31 @@ public class Tools {
         // =======================indexStoredUserID[1]
         indexStoredUserID[1] = 230308L;
         objCustomer[1] = new Customer(indexStoredUserID[1], "Aravind", "cust123", 26, "arav@gmail.com", 9449047389L);
+        objCustomer[1].serviceNoIndices[0]=this.linearSearchIndex(this.createServiceNo());//auto updating the last index pointing variable
+        newServiceNoIndex = objCustomer[1].serviceNoIndices[0];
+        objAddress = new Address(102,"Hebbal, Bellary Rd","Frazer town","Bangalore",230024L);
+        objServiceNo = new serviceNo(indexStoredServiceNo[newServiceNoIndex], objAddress);
+        
+        objBill = new Bill(this.createBillNo(), 110, "23/11/2021");
+        objServiceNo.generateUnpaidBills(objBill);
+        objBill = new Bill(this.createBillNo(), 130, "23/12/2021");
+        objServiceNo.generateUnpaidBills(objBill);
+        
+        objBill = new Bill(this.createBillNo(), 240, "23/7/2021");
+        objServiceNo.generatePaidBills(objBill);
+        objBill = new Bill(this.createBillNo(), 130, "23/8/2021");
+        objServiceNo.generatePaidBills(objBill);
+        objBill = new Bill(this.createBillNo(), 310, "23/9/2021");
+        objServiceNo.generatePaidBills(objBill);
+
+        objCustomer[1].passServiceNo(objServiceNo, newServiceNoIndex);
+        // objServiceNo.getUnpaidBills();
+        // objServiceNo.getPaidBills();
+
+
 
        
+        // =======================indexStoredUserID[2]
 
         indexStoredUserID[2] = 247082L;
         objCustomer[2] = new Customer(indexStoredUserID[2], "Maddy", "cust123", 33, "maddy@gmail.com", 6734892578L);
