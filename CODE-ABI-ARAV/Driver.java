@@ -264,13 +264,28 @@ public class Driver {
                                                     }
                                                     case 2:{
                                                         objCustomer[loggedCustomerIndex].objServiceNo[serviceNumberCh].getUnpaidBills();
-                                                        // System.out.print(printLine+"\nChoose Bill number to PAY:");
-                                                        // int payBillCh =scan.nextInt();
-                                                        // System.out.println(printLine+"\n\t\t\tPAYMENT"+printLine);
-                                                        // System.out.print("Enter Account Number: ");
-                                                        // Long accountNo = scan.nextLong();
-                                                        // System.out.print("Enter Card Holder: ");
-                                                        // String custLogPass = scan.next();
+                                                        System.out.print(printLine+"\nChoose Bill number to PAY:");
+                                                        int payBillCh =scan.nextInt();
+                                                        System.out.println(printLine+"\n\t\t\tPAYMENT\n"+printLine);
+                                                        System.out.print("Enter Account Number: ");
+                                                        Long accountNo = scan.nextLong();
+                                                        System.out.print("Enter Card Holder Name: ");
+                                                        String cardHolderName = scan.next();
+                                                        System.out.print("Enter Postal Code: ");
+                                                        int postalCode = scan.nextInt();
+                                                        System.out.print("Enter Expiry Date(MM/yyyy): ");
+                                                        String expiryDate = scan.next();
+                                                        
+
+                                                        payAccount objPayAccount=new payAccount(accountNo,cardHolderName,postalCode,expiryDate);
+                                                        objCustomer[loggedCustomerIndex].passPayAccountObj(objPayAccount);
+                                                        
+                                                        
+                                                        //only if he saves it 
+                                                        System.out.print("\n"+printLine);
+
+                                                        objCustomer[loggedCustomerIndex].objPayAccount.viewCardDetails();
+
 
 
 

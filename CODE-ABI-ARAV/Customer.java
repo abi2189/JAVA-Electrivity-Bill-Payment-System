@@ -3,7 +3,7 @@ import java.text.*;
 
 public class Customer extends User implements UserDetailsUpdate{
     static String printLine = "--------------------------------------------------------------";
-    private payAccount objPayAccount;
+    public payAccount objPayAccount;
     private Feedback objFeedback;
 
     // public Tools objTools1;
@@ -39,6 +39,7 @@ public class Customer extends User implements UserDetailsUpdate{
     //pass only if user opts to save his card
     public void passPayAccountObj(payAccount objPayAccount){
         this.objPayAccount = objPayAccount;
+        System.out.println("\nCARD SAVED!");
     }
 
 

@@ -8,7 +8,7 @@ public class payAccount {
     private String expiryDate;
     // private Date date1;
 
-    SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");  
+    SimpleDateFormat formatter1=new SimpleDateFormat("MM/yyyy");  
 
 
     //constructor
@@ -52,6 +52,6 @@ public class payAccount {
 
     //cannot use tosting since IT CANNOT THROW EXCEPTION
     public void viewCardDetails() throws Exception{
-        System.out.println("Account Number: " + this.accountNo + "\nCard-Holder Name: " + this.cardHolderName + "\nPostal Code: " + this.postalCode +"\nEpiry Date: " + formatter1.format(this.getExpiryDate()));
+        System.out.println("CARD DETAILS:\n"+"Account Number: " + this.accountNo + "\nCard-Holder Name: " + this.cardHolderName + "\nPostal Code: " + this.postalCode +"\nEpiry Date: " + formatter1.format(this.getExpiryDate()));
     }
 }
