@@ -253,9 +253,38 @@ public class Driver {
                                                 System.out.println(printLine);
                                                 System.out.println("\t\t\tMenu\n\t\t1.Pay Bill\n\t\t2.View History of bills\n\t\t3.Back to User Menu");
                                                 intChoice = scan.nextInt();
-                                                objCustomer[loggedCustomerIndex].viewServiceNoLogged();
+                                                switch(intChoice){
+                                                    case 1:{
+                                                        objCustomer[loggedCustomerIndex].viewServiceNoLogged();
+                                                        System.out.println("Choose service number");
+                                                        int serviceNumberCh =scan.nextInt();
+                                                        serviceNumberCh=0;
+                                                        objCustomer[loggedCustomerIndex].objServiceNo[serviceNumberCh].getPaidBills();
 
-                                            }while (true);
+                                                        break;
+
+                                                    }
+                                                    case 2:{
+                                                        objCustomer[loggedCustomerIndex].viewServiceNoLogged();
+                                                        System.out.println("Choose service number");
+                                                        int serviceNumberCh =scan.nextInt();
+                                                        serviceNumberCh=0;
+                                                        objCustomer[loggedCustomerIndex].objServiceNo[serviceNumberCh].getPaidBills();
+                                                        
+                                                        break;
+
+                                                    }
+
+
+                                                }
+
+
+
+
+                                                System.out.println(printLine + "\nDo you want to go to the ADMIN MENU?(y/n)");
+                                                charChoice = scan.next().charAt(0);
+
+                                            } while (charChoice == 'y'||charChoice == 'Y');
 
                                             // objCustomer[loggedCustomerIndex].viewServiceNoLogged();
                                             /*

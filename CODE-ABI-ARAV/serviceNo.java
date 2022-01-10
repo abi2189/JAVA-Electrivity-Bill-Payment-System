@@ -31,7 +31,7 @@ public class serviceNo {
             this.objBillPaid[i].generateBill();            
         }
     }
-    public String viewServiceNoLogged(){
+    public String viewServiceNoLoggedC(){
         return "\nService No.: " + this.serviceNo + "\nAddress:" + this.objAddress.viewAddressLogged(); 
     }
 
