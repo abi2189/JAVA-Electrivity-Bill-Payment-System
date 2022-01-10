@@ -150,11 +150,12 @@ public class Tools {
     }
 
     // PREDEFINED CUSTOMER DETAILS
-    public void preCustomer(Customer[] objCustomer){
-        int newCustomerInde;
+    public void preCustomer(Customer[] objCustomer) throws Exception{
+        int newCustomerIndex;
         int newServiceNoIndex;
         serviceNo objServiceNo;
         Address objAddress;
+        Bill objBill;
         
         // =======================indexStoredUserID[0]
         indexStoredUserID[0] = 202208L;
@@ -164,7 +165,25 @@ public class Tools {
         newServiceNoIndex = objCustomer[0].serviceNoIndices[0];
         objAddress = new Address(402,"NCC Urban Senate, Thannikal Keerthy Nagar Rd","Elammakara","Kochi",560024L);
         objServiceNo = new serviceNo(indexStoredServiceNo[newServiceNoIndex], objAddress);
+        
+        objBill = new Bill(this.createBillNo(), 220, "23/11/2021");
+        objServiceNo.generateUnpaidBills(objBill);
+        objBill = new Bill(this.createBillNo(), 150, "23/12/2021");
+        objServiceNo.generateUnpaidBills(objBill);
+        
+        objBill = new Bill(this.createBillNo(), 240, "23/7/2021");
+        objServiceNo.generatePaidBills(objBill);
+        objBill = new Bill(this.createBillNo(), 150, "23/8/2021");
+        objServiceNo.generatePaidBills(objBill);
+        objBill = new Bill(this.createBillNo(), 310, "23/9/2021");
+        objServiceNo.generatePaidBills(objBill);
+        objBill = new Bill(this.createBillNo(), 280, "23/10/2021");
+        objServiceNo.generatePaidBills(objBill);
+        
         objCustomer[0].passServiceNo(objServiceNo, newServiceNoIndex);
+        // objServiceNo.getUnpaidBills();
+        // objServiceNo.getPaidBills();
+
 
         objCustomer[0].serviceNoIndices[1]=this.linearSearchIndex(this.createServiceNo());
         newServiceNoIndex = objCustomer[0].serviceNoIndices[1];
@@ -173,6 +192,8 @@ public class Tools {
         objCustomer[0].passServiceNo(objServiceNo, newServiceNoIndex);
 
         objCustomer[0].SNI=2;
+
+
 
 
         // =======================indexStoredUserID[1]

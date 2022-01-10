@@ -28,24 +28,25 @@ public class Bill extends Payment{
     public Bill(){}
 
     //PASS these three values and everything gets calculated auto.
-    public Bill(int billNo, int consUnits, String issueD) throws Exception{
+    public Bill(long billNo, int consUnits, String issueD) throws Exception{
         this.billNo = billNo;
         this.consUnits = consUnits;
 
         objEC = new energyCharges();
         objEC.setConsUnits(this.consUnits);
         this.tEnergyCharges = objEC.calculateEnergyCharges();
-        System.out.println(objEC);//prints everything abt energy charges
+        // System.out.println(objEC);//prints everything abt energy charges
 
         objOC = new otherCharges();
         this.tOtherCharges = objOC.calculateTotalOtherCharges(this.consUnits, this.tEnergyCharges);
-        System.out.println(objOC);
+        // System.out.println(objOC);
 
         this.billAmt = this.tEnergyCharges + this.tOtherCharges;
-        System.out.println("\nBill Amount: " + this.billAmt);
+        // System.out.println("\nBill Amount: " + this.billAmt);
 
-        this.setIssueDate(issueD);
-        this.viewBillDates();
+        this.issueDate = issueD;
+        // this.setIssueDate(issueD);
+        // this.viewBillDates();
     }
 
     //all that you got to do is ==> PASS A STRING TO set function, and viewBillDates to view everything changing automatically.
@@ -69,5 +70,17 @@ public class Bill extends Payment{
         this.disconDate = getIssueDate();
         this.disconDate.setDate((this.disconDate.getDate() + 20));
         System.out.println("Discontinued Date: "+ formatter.format(this.disconDate));
+    }
+
+    public void generateBill() throws Exception{
+        System.out.println(objEC);//prints everything abt energy charges
+        System.out.println(objOC);
+        System.out.println("\nBill Amount: " + this.billAmt);
+        
+        this.setIssueDate(this.issueDate);
+        this.viewBillDates();
+
+
+ 
     }
 }
