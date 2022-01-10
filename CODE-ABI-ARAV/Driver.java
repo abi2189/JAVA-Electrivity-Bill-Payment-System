@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Driver {
     static int custCount = 0;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         Scanner scan = new Scanner(System.in);
 
@@ -258,7 +258,12 @@ public class Driver {
                                             }while (true);
 
                                             // objCustomer[loggedCustomerIndex].viewServiceNoLogged();
-                                            
+                                            /*
+                                            objCustomer[loggedCustomerIndex].viewServiceNoLogged();
+                                            objCustomer[loggedCustomerIndex].objServiceNo[0].getPaidBills();
+                                            objCustomer[loggedCustomerIndex].objServiceNo[0].getUnpaidBills();
+                                            */
+
                                         }
             
                                         case 3:{break;}

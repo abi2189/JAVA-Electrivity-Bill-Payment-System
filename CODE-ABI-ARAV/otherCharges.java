@@ -23,13 +23,13 @@ public class otherCharges {
 	//same as setting but calculating
 	public float calculateTotalOtherCharges(int units, float tEnergyCharges) {
 		this.energyCharges=tEnergyCharges;
-		this.totalOtherCharges = this.fixedCharges + (this.energyCharges*this.GST) + (units*this.duty);
-		this.duty = units*this.duty;
+		this.totalOtherCharges = fixedCharges + (this.energyCharges*GST) + (units*duty);
+		duty = units*duty;
         return this.totalOtherCharges;
 	}
 
 	public String toString(){
-        return "\nFixedCharges: " + this.fixedCharges + "\nGST: " + this.energyCharges*this.GST + "\nDuty Charges: " + this.duty + "\nTotal Other Charges: " + this.totalOtherCharges;
+        return "\nFixedCharges: " + fixedCharges + "\nGST: " + this.energyCharges*GST + "\nDuty Charges: " + duty + "\nTotal Other Charges: " + this.totalOtherCharges;
 	}
     
 }
