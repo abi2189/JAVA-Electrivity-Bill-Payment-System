@@ -3,6 +3,7 @@
 // (bill contains consumption_units and bill_amt)
 
 import java.util.*;
+import java.io.ObjectInput;
 import java.text.*;
 
 import java.time.LocalDate;
@@ -80,5 +81,11 @@ public class Bill extends Payment{
         this.setIssueDate(this.issueDate);
         this.viewBillDates();
  
+    }
+
+    Payment objPayment;
+    public void generateTransactionID(Payment objPayment){
+        this.objPayment = objPayment;
+
     }
 }
