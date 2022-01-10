@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.function.IntFunction;
 
 public class Driver {
     static int custCount = 0;
@@ -276,18 +277,26 @@ public class Driver {
                                                         System.out.print("Enter Expiry Date(MM/yyyy): ");
                                                         String expiryDate = scan.next();
                                                         
+                                                        System.out.println("Do you want to save the card?(y/n)");
+                                                        charChoice = scan.next().charAt(0);
+                                                        if(charChoice == 'y' || charChoice == 'Y'){
+                                                            payAccount objPayAccount=new payAccount(accountNo,cardHolderName,postalCode,expiryDate);
+    
+                                                            objCustomer[loggedCustomerIndex].passPayAccountObj(objPayAccount);
+                                                            
+                                                            //only if he saves it 
+                                                            System.out.print("\n"+printLine);
+    
+                                                            objCustomer[loggedCustomerIndex].objPayAccount.viewCardDetails();
+                                                        }
 
-                                                        payAccount objPayAccount=new payAccount(accountNo,cardHolderName,postalCode,expiryDate);
-                                                        objCustomer[loggedCustomerIndex].passPayAccountObj(objPayAccount);
-                                                        
-                                                        
-                                                        //only if he saves it 
-                                                        System.out.print("\n"+printLine);
 
-                                                        objCustomer[loggedCustomerIndex].objPayAccount.viewCardDetails();
+                                                        long transID = objTools.createTransactionNo();
+                                                        Payment objPayment = new Payment(transID, "Payment Successful");
 
+                                                        objCustomer[loggedCustomerIndex].objServiceNo[serviceNumberCh].objBillUnpaid[payBillCh].generateTransactionID(objPayment);
 
-
+                                                        System.out.println(objPayment.toString());
 
                                                         
                                                         break;

@@ -83,7 +83,7 @@ public class Bill extends Payment{
  
     }
 
-    Payment objPayment;
+    public Payment objPayment;
     public void generateTransactionID(Payment objPayment){
         this.objPayment = objPayment;
 
