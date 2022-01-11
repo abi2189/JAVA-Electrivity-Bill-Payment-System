@@ -54,6 +54,7 @@ public class energyCharges {
     }
 
     public float calculateEnergyCharges(){
+        findTariffSlab();
         this.energyCharges = this.consUnits * calculateECPerUnit();
         return this.energyCharges;
     }
