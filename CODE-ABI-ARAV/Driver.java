@@ -201,7 +201,7 @@ public class Driver extends Thread {
                                 }
                                 do {
                                     System.out.println(printLine);
-                                    System.out.println("\t\t\tUSER MENU\n\t\t1.Update Profile\n\t\t2.Bill Payment\n\t\t3.LOG OUT");
+                                    System.out.println("\t\t\tUSER MENU\n\t\t1.Update Profile\n\t\t2.Bill Payment\n\t\t5.LOG OUT");
                                     System.out.print("ENTER CHOICE: ");
 
                                     intChoice = scan.nextInt();
@@ -277,7 +277,7 @@ public class Driver extends Thread {
                                                 int serviceNumberCh =scan.nextInt();
                                                 // serviceNumberCh=0;////jus to check for the predefined value for 1st customer 1 service number
                                                 System.out.println(printLine);
-                                                System.out.println("\t\t\tBill Payment Menu\n\t\t1.PAID BILLS\n\t\t2.UNPAID BILLS\n\t\t3.Back to USER MENU");
+                                                System.out.println("\t\t\tBill Payment Menu\n\t\t1.PAID BILLS\n\t\t2.UNPAID BILLS\n\t\t4.Back to USER MENU");
                                                 System.out.print("ENTER CHOICE: ");
 
                                                 intChoice = scan.nextInt();
@@ -354,9 +354,9 @@ public class Driver extends Thread {
                                                         break;
 
                                                     }
-                                                    case 3:{break;}
+                                                    case 4:{break;}
                                                 }
-                                                if(intChoice==3){break;}
+                                                if(intChoice==4){break;}
 
                                                 System.out.print(printLine + "\nDo you want to go to the BILL PAYMENT?(y/n): ");
                                                 charChoice = scan.next().charAt(0);
@@ -373,16 +373,24 @@ public class Driver extends Thread {
 
                                         }
             
-                                        case 3:{
+                                        case 5:{
                                             try { Thread.sleep(1500);} catch (Exception e) {}
                                             break;
                                         }
             
                                     }
-                                    if (intChoice == 3) {
-                                        break;
+                                    
+                                    if (intChoice == 3 ){
+                                        charChoice = 'y';
+                                    }else if(intChoice == 5){
+                                        charChoice = 'n';
                                     }
-                                } while (true);
+                                    else{
+                                        System.out.print(printLine + "\nDo you want to go to USER MENU?(y/n): ");
+                                        charChoice = scan.next().charAt(0);
+                                    }
+            
+                                } while (charChoice == 'y'||charChoice == 'y');
                                 if (intChoice == 3) {
                                     System.out.println(printLine + "\nLogging out.....");
                                     try { Thread.sleep(1500);} catch (Exception e) {}
