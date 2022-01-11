@@ -134,6 +134,7 @@ public class Driver extends Thread {
 
                                 // System.out.println(objServiceNo);//last obj
                                 System.out.println(printLine+"\nRegistration Process Done! Wait for the APPROVAL!\n\t\tThank You\n\tRedirecting to LOGIN PAGE");
+                                try { Thread.sleep(1500);} catch (Exception e) {}
 
 
                                 break;
@@ -216,7 +217,7 @@ public class Driver extends Thread {
                                                 switch (intChoice) {
                                                     case 1: {
                                                         System.out.println(printLine);
-                                                        System.out.println("Enter New User Name:");
+                                                        System.out.print("Enter New User Name:");
                                                         String updateName = scan.next();
                                                         objCustomer[loggedCustomerIndex].changeUserName(updateName);
                                                         System.out.println(printLine);
@@ -225,7 +226,7 @@ public class Driver extends Thread {
                                                     }
                                                     case 2: {
                                                         System.out.println(printLine);
-                                                        System.out.println("Enter New Age:");
+                                                        System.out.print("Enter New Age:");
                                                         int updateAge = scan.nextInt();
                                                         objCustomer[loggedCustomerIndex].changeUserAge(updateAge);
                                                         System.out.println(printLine);
@@ -234,7 +235,7 @@ public class Driver extends Thread {
                                                     }
                                                     case 3: {
                                                         System.out.println(printLine);
-                                                        System.out.println("Enter New Mobile Number:");
+                                                        System.out.print("Enter New Mobile Number:");
                                                         long updatePhn = scan.nextLong();
                                                         objCustomer[loggedCustomerIndex].changeUserPhn(updatePhn);
                                                         System.out.println(printLine);
@@ -243,7 +244,7 @@ public class Driver extends Thread {
                                                     }
                                                     case 4: {
                                                         System.out.println(printLine);
-                                                        System.out.println("Enter New Email:");
+                                                        System.out.print("Enter New Email:");
                                                         String updateEmail = scan.next();
                                                         objCustomer[loggedCustomerIndex].changeEmail(updateEmail);
                                                         System.out.println(printLine);
@@ -361,6 +362,7 @@ public class Driver extends Thread {
                                                 charChoice = scan.next().charAt(0);
 
                                             } while (charChoice == 'y'||charChoice == 'Y');
+                                            break;
 
                                             // objCustomer[loggedCustomerIndex].viewServiceNoLogged();
                                             /*
@@ -382,15 +384,17 @@ public class Driver extends Thread {
                                     }
                                 } while (true);
                                 if (intChoice == 3) {
-                                    System.out.println(printLine + "\nLOGGING OUT.....");
+                                    System.out.println(printLine + "\nLogging out.....");
+                                    try { Thread.sleep(1500);} catch (Exception e) {}
                                     break;
                                 }
                             }
 
-                        }
-                        System.out.print(printLine + "\nDo you want to go to LOGIN PAGE?(y/n): ");
-                        charChoice = scan.next().charAt(0);
-                        if (charChoice == 'y'||charChoice == 'y') {
+                        }if (intChoice == 3){
+                            charChoice = 'y';
+                        }else{
+                            System.out.print(printLine + "\nDo you want to go to LOGIN PAGE?(y/n): ");
+                            charChoice = scan.next().charAt(0);
                         }
 
                     } while (charChoice == 'y'||charChoice == 'y');

@@ -3,7 +3,7 @@ interface UserDetailsUpdate{
 }
 
 
-public class User {
+public abstract class User implements UserDetailsUpdate{
     protected long userID;
     protected String userName;
     protected String userPass;
