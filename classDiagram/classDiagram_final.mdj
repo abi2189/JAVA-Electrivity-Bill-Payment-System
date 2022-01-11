@@ -2462,6 +2462,7 @@
 											"top": 1212,
 											"width": 344.31591796875,
 											"height": 13,
+											"underline": true,
 											"text": "-duty: int",
 											"horizontalAlignment": 0
 										},
@@ -7754,6 +7755,7 @@
 							},
 							"name": "duty",
 							"visibility": "private",
+							"isStatic": true,
 							"type": "int"
 						},
 						{
